@@ -18,7 +18,12 @@
     font-family: Sans-Serif;
     line-height: 18px;
   }
-
+  .center {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
