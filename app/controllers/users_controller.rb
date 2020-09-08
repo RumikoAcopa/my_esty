@@ -11,12 +11,27 @@ class UsersController < ApplicationController
   end
 
   # POST: /users
-  post "/users" do
-    redirect "/users"
+  #post "/users" do
+  #  redirect "/users"
+  #end
+
+  get '/signup' do
+    erb :'/users/new'
+  end
+
+  post '/signup' do
+    @user = User.new(name: params[:name], email: params[:email], password: params[:password])
+    if @user.save
+      session[:id] = @user.id
+      redirect "/sessions/login"
+    else
+      @error = "Think Again, Try harder this time!"
+      erb :'/users/new.html'
+    end
   end
 
   # GET: /users/5
-  get "/users/:id" do
+  get '/users/:id' do #this will be the users show route
     erb :"/users/show.html"
   end
 
