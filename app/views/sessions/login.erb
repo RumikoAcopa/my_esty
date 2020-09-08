@@ -1,13 +1,13 @@
 <h1>Log In</h1>
 <%= @error %>
-<form method="post" action="/login">
+<form action="/login" method="post" >
   <p>
     <div><label for="email">Email</label></div>
-    <input type="email" name="email" id="email" />
+    <input type="text" name="email" id="email" />
   </p>
-  <p>
-    <div><label for="password">Password</label></div>
-    <input type="password" name="password" id="password" />
+  <p> 
+    <div><label for="password">Password</label></div> 
+    <input type="text" name="password" id="password" />
   </p>
-  <input type="submit" value="Sign In"/>
+  <input type="submit" value="Login"/>
 </form>
