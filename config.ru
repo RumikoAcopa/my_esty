@@ -7,4 +7,5 @@ end
 run ApplicationController
 use ProductsController
 use UsersController
+use SessionsController
 
