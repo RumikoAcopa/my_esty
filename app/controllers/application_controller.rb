@@ -12,16 +12,23 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    if logged_in?
+      redirect "/users/#{current_user}"
+    else
+      erb :welcome
+    end
   end
 
+  
   private
+  helpers do
 
-  def current_user
-    User.find_by_id(session[:id])
+  def logged_in? #true if user is logged in, otherwise false
+    !!current_user #dbl bang obj of truthiness. 
   end
 
-  def logged_in?
-    !!current_user
-  end
-end
+  def current_user 
+    @current_user ||= User.find_by(id: session[:user_id])#current user returns
+  end   #reduce the # of db calls assigining it to an instance variable
+  end   #have we added a users id key to the hash
+end    
