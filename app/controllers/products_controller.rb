@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  #get product/new to create new product entry
   # GET: /products
   get "/products" do
     erb :"/products/index.html"
@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   # GET: /products/new
   get "/products/new" do
+    
     erb :"/products/new.html"
   end
 

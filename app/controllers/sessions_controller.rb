@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end
     
   
-    post '/login' do #purpose to receive Login Form
+    post '/login' do #purpose to receive Login Form, adding key value pair to session hash
         @user = User.find_by(email: params[:email])  # find the user by their user email: & log them in
         if @user && @user.authenticate(params[:password]) # verify user, 
           session[:user_id] = @user.id  
