@@ -7,18 +7,19 @@ class SessionsController < ApplicationController
     post '/login' do #purpose to receive Login Form
         @user = User.find_by(email: params[:email])  # find the user by their user email: & log them in
         if @user && @user.authenticate(params[:password]) # verify user, 
-            session[:id] = @user.id                 #then log them in, if not show them the form again
-            redirect "users/#{@user.id}"                            #authenticate and redirect to users landing page
-          else 
-            @error = "Incorrect email or password"
-            erb :'/sessions/login'
+          session[:user_id] = @user.id  
+          puts session               #then log them in, if not show them the form again
+          redirect "users/#{@user.id}"             #authenticate and redirect to users landing page
+        else 
+          @error = "Incorrect email or password"
+          erb :'/sessions/login'
         end
     end
-    
-    delete '/logout' do
-        session.clear
-        redirect "/"
-      end
+
+    get '/logout' do
+      session.clear
+      redirect "/"
+    end
 end
    
     
