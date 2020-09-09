@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   # POST: /users
-  post "/users" do #here is where we will create a new user
+  post "/users/new" do #here is where we will create a new user
     @user = User.create(params)
       if @user.save
       session[:user_id] = @user.id  #logs the user in once they sign up 
