@@ -13,6 +13,18 @@ class ProductsController < ApplicationController
 
   # POST: /products
   post "/products" do
+    
+    if !logged_in
+      redirect '/'
+    end
+    if params[name: params[:name], 
+      size: params[:size],description: params[:description]] != ""
+      @products = Product.create(params)
+      redirect "/products/#{@products.id}"
+    else
+      redirect '/products/new'
+    end
+    @product.save 
     redirect "/products"
   end
 
