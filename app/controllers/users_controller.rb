@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 
   # GET: /users
   get "/users" do
-    erb :"/users/index.html"
+    erb :"users/index.html"
   end
 
   # GET: /users/new
   get "/users/new" do
     
-    erb :"/users/new.html"
+    erb :"users/new.html"
   end
 
   # POST: /users
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       redirect "/users/#{@user.id}" #params will look like this: "name"=>"Rumiko"
       else
         #it would be nice to include a message telling them what is wrong
-      redirect '/signup'
+      redirect '/users/new'
     end
   end
 
