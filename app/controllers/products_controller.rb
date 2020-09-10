@@ -13,29 +13,32 @@ class ProductsController < ApplicationController
 
   # POST: /products
   post "/products" do
+    #if !logged_in?
+    # redirect '/'
+    #end
+    #if params[name:] != ""
+    # @products = Products.create(name: params[:name],
+    # user_id: current_user.id)
+    # redirect "/products/show.html#{@products.id}"
+    #else
+    # redirect '/products/new'
+    #end
+    #@product.save 
+   #
+    #current_user.products << Product.create(params)
     
-    if !logged_in
-      redirect '/'
-    end
-    if params[name: params[:name], 
-      size: params[:size],description: params[:description]] != ""
-      @products = Product.create(params)
-      redirect "/products/#{@products.id}"
-    else
-      redirect '/products/new'
-    end
-    @product.save 
-    redirect "/products"
   end
 
-  # GET: /products/5
-  get "/products/:id" do
+  # GET: /products/5 #dynamic route key/val pr in params hash
+  get "/products/:id" do #render a part.product creation
+    @products = Product.find(params[:id])
     erb :"/products/show.html"
   end
 
-  # GET: /products/5/edit
+  # GET: /products/5/edit #this route should render edit.erb Product/edit.erb for Edit Form
   get "/products/:id/edit" do
-    erb :"/products/edit.html"
+
+    erb :"/products/edit.html" #a file 
   end
 
   # PATCH: /products/5
