@@ -15,7 +15,7 @@
   body {
     background-color: lightblue;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: Comic Sans, Comic Sans MS, cursive;
     line-height: 18px;
   }
   .center {
@@ -49,6 +49,7 @@
 
   h3 {
     font-size: 18px;
+    float: center;
     line-height: 36px;
   }
 
@@ -61,7 +62,7 @@
   }
 
   .content {
-    float: left;
+    float: center;
     width: 60%; /* 480px / 800px */
   }
 
