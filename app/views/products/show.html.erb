@@ -1,1 +1,11 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>View details about your Product Regiment and edit or delete.</h1>
+<form method="get" action="/products/<%=@products.id%>/edit">
+<a href= "/products/<%= @product.id%>/edit">Edit</a>
+    <button type="submit">Edit</button>
+</form>
+<h1><%= @products.cleanser %></h1>
+<p><%= @products.toner %></p>
+<p><%= @products.serums %></p>
+<p><%= @products.moisturizer %></p>
+<p><%= @products.exfoliator %></p>
+<p><%= @products.mask %></p>

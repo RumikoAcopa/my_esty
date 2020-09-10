@@ -1,1 +1,4 @@
-<h1>This is the Model's index page.</h1>
+<h1><% current_user.products.each do |product|%>
+<a href ="/products/<%= product.id %>"><%= product.products_name %> </a> <br>
+<%end%></h1>
+
