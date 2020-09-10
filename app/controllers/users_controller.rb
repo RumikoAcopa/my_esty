@@ -46,8 +46,7 @@ class UsersController < ApplicationController
     #first create variable
     @user = User.find_by(id: params[:id])
       #whats the act of logging someone in w/bcrypt
-
-    #erb :'/users/show'
+    erb :'users/show.html'
   end
 
   # GET: /users/5/edit
