@@ -17,6 +17,8 @@
     color: #333;
     font-family: Comic Sans, Comic Sans MS, cursive;
     line-height: 18px;
+    text-align: center;
+    
   }
   .center {
       position: absolute;
