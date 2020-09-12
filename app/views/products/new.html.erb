@@ -1,55 +1,54 @@
-<h1>Products</h1>
-<form class="" action="/products" method="post">
-
-<p>Choose a Cleanser: <select name="cleanser" id="cleanser"> </p>
-    <option value="Oil">Oil</option>
-    <option value="Creamy">Creamy</option>
-    <option value="Brightening">Brightening</option>
-    <option value="Exfoliating Cleanser">Exfoliating Cleanser</option>
-    <option value="Mandelic Cleanser">Mandelic Cleanser</option>
+<h2>Have Fun & Be Creative! Personalize Your Skin Care Package and Select Your Products Here!</h2>
+<form action="/products"method="post">
+    <p>Package Name: <input id = "package_name" name = "package_name" type = "text"></p>
+    <p>Choose a Cleanser: <select name= "cleanser"></p>
+    <option value="Oil">Oil Based : Normal/Dry Skin Type</option>
+    <option value="Creamy">Creamy : Normal/Dry Skin Type</option>
+    <option value="Brightening">Brightening : Any Skin Type</option>
+    <option value="Exfoliating Cleanser">Exfoliating Cleanser : Combo/Oily/Acneic Skin Type</option>
+    <option value="Mandelic Cleanser">Mandelic Cleanser : Any Skin Type/Hyperpigmented Skin</option>
     </select>
     <br>
- <p>Choose a Toner: <select name="toner" id="toner"> </p>
-    <option value="Hydrating">Hydrating Toner</option>
-    <option value="Mandelic">Mandelic</option>
-    <option value="Glycolic Pads">Glycolic Pads</option>
+    <p>Choose a Toner: <select name= "toner"></p>
+    <option value="Hydrating">Hydrating Toner : Any Skin Type</option>
+    <option value="Mandelic">Mandelic : Any Skin Type</option>
+    <option value="Glycolic Pads">Glycolic Pads : Oily/Combo/Acneic Skin Type</option>
     </select>
     <br>
-<p>Choose a Serums: <select name="serums" id="serums"> </p>
-    <option value="Plumping Collagen">Plumping Collagen</option>
-    <option value="Lifting/Skin Tightening">Lifting/Skin Tighetening</option>
-    <option value="Brightening">Brightening</option>
-    <option value="Hydrating">Hydrating</option>
-    <option value="Oil Control">Oil Control</option>
+    <p>Choose a Serum: <select name= "serum"></p>
+    <option value="Plumping Collagen">Plumping Collagen : Any Skin Type</option>
+    <option value="Lifting/Skin Tightening">Lifting/Skin Tighetening : Any Skin Type</option>
+    <option value="Brightening">Brightening : Any Skin Type</option>
+    <option value="Hydrating">Hydrating : Any Skin Type/Normal/Dry</option>
+    <option value="Oil Control">Oil Control : Oily/Acneic/Combo</option>
     </select>
     <br>
-    <p>Choose a Moisturizer: <select name="moisturizer" id="moisturizer"> </p>
+    <p>Choose a Moisturizer: <select name= "moisturizer"></p>
     <option value="BB Cream Light w/Spf 15">BB Cream Light w/Spf 15</option>
     <option value="BB Cream Medium w/Spf 15">BB Cream Medium w/Spf 15</option>
     <option value="BB Cream Dark w/Spf 15">BB Cream Dark w/Spf 15</option>
-    <option value="Hydrating">Hydrating</option>
-    <option value="Brightening">Brightening</option>
-    <option value="Mattefying">Mattefying</option>
+    <option value="Hydrating">Hydrating : Any Skin Type</option>
+    <option value="Brightening">Brightening : Any Skin Type</option>
+    <option value="Mattefying">Mattefying : Any Skin Type</option>
     <option value="Spf 30">Spf 30</option>
     </select>
     <br>
-    <p>Choose a Exfoliator: <select name="exfoliator" id="exfoliator"> </p>
+    <p>Choose a Exfoliator: <select name= "exfoliator"></p>
     <option value="Pumpkin Enzyme">Pumpkin Enzyme</option>
     <option value="Gentle Scrub">Gentle Scrub</option>
     <option value="Volcanic Ash Scrub">Volcanic Ash Scrub</option>
-    <option value="Exfoliating Cleanser">Exfoliating Cleanser</option>
     </select>
     <br>
-    <p>Choose a Mask: <select name="mask" id="mask"> </p>
+    <p>Choose a Mask: <select name= "mask"></p>
     <option value="HydroJelly">HydroJelly</option>
     <option value="Plumping Collagen">Plumping Collagen</option>
     <option value="Brightening">Brightening</option>
     <option value="Refreshing Eye">Refreshing Eye</option>
     <option value="Collagen Eye">Collagen Eye</option>
-    <option value="Clay">Clay</option>
+    <option value="Clay">Kaolin Clay</option>
     </select>
     <br>
-    <input type="submit" name="submit" value="My Products" />
+    <input id="submit"type="submit" value="submit">
     <br>
 </form>
 
