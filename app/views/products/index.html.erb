@@ -1,4 +1,8 @@
+<form>
+<input type="button" value="Back" onclick="history.back()">
+</form>
+<h3>Click on your package name to see product list!</h3>
 <h1><% current_user.products.each do |product|%>
-<a href ="/products/<%= product.id %>"><%= product.products_name %> </a> <br>
+<a href ="/products/<%= product.id %>"><%= product.package_name%></a><br>
 <%end%></h1>
 
