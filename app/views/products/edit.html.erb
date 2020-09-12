@@ -1,1 +1,61 @@
 <h1>Edit form goes here.</h1>
+<form class="" action="/products/<%=@products.id%>" method="post">
+<input type= "hidden" name="_method" value="patch">
+<label for="name">Products:</label>
+<input type= "text" name="Cleanser" value="<%= @products.cleanser%>">
+<input type= "text" name="Toner" value= "<%= @products.toner%>">
+<input type= "text" name="Serum" value= "<%= @products.serum%>">
+<input type= "text" name="Moisturizer" value= "<%= @products.moisturizer%>">
+<input type= "text" name="Exfoliator" value= "<%= @products.exfoliator%>">
+<input type= "text" name="Mask" value= "<%= @products.mask%>">
+<br>
+
+<p>Choose a Cleanser: <select name= "cleanser"></p>
+    <option value="Oil"<%= 'selected' if @products.cleanser == 'Oil' %>>Oil Based : Normal/Dry Skin Type</option>
+    <option value="Creamy"<%= 'selected' if @products.cleanser == 'Creamy' %>>Creamy : Normal/Dry Skin Type</option>
+    <option value="Brightening"<%= 'selected' if @products.cleanser == 'Brightening' %>>Brightening : Any Skin Type</option>
+    <option value="Exfoliating Cleanser"<%= 'selected' if @products.cleanser == 'Exfoliating Cleanser' %>>Exfoliating Cleanser : Combo/Oily/Acneic Skin Type</option>
+    <option value="Mandelic Cleanser"<%= 'selected' if @products.cleanser == 'Mandelic Cleanser' %>>Mandelic Cleanser : Any Skin Type/Hyperpigmented Skin</option>
+    </select>
+    <br>
+    <p>Choose a Toner: <select name= "toner"></p>
+    <option value="Hydrating"<%= 'selected' if @products.toner == 'Hydrating' %>>Hydrating Toner : Any Skin Type</option>
+    <option value="Mandelic"<%= 'selected' if @products.toner == 'Mandelic' %>>Mandelic : Any Skin Type</option>
+    <option value="Glycolic Pads"<%= 'selected' if @products.toner == 'Glycolic Pads' %>>Glycolic Pads : Oily/Combo/Acneic Skin Type</option>
+    </select>
+    <br>
+    <p>Choose a Serum: <select name= "serum"></p>
+    <option value="Plumping Collagen"<%= 'selected' if @products.serum == 'Plumping Collage' %>>Plumping Collagen : Any Skin Type</option>
+    <option value="Lifting/Skin Tightening"<%= 'selected' if @products.serum == 'Lifting/Skin Tightening' %>>Lifting/Skin Tighetening : Any Skin Type</option>
+    <option value="Brightening"<%= 'selected' if @products.serum == 'Brightening' %>>Brightening : Any Skin Type</option>
+    <option value="Hydrating"<%= 'selected' if @products.serum == 'Hydrating' %>>Hydrating : Any Skin Type/Normal/Dry</option>
+    <option value="Oil Control"<%= 'selected' if @products.serum == 'Oil Control' %>>Oil Control : Oily/Acneic/Combo</option>
+    </select>
+    <br>
+    <p>Choose a Moisturizer: <select name= "moisturizer"></p>
+    <option value="BB Cream Light w/Spf 15"<%= 'selected' if @products.moisturizer == 'BB Cream Light w/Spf 15' %>>BB Cream Light w/Spf 15</option>
+    <option value="BB Cream Medium w/Spf 15"<%= 'selected' if @products.moisturizer == 'BB Cream Medium w/Spf 15' %>>BB Cream Medium w/Spf 15</option>
+    <option value="BB Cream Dark w/Spf 15"<%= 'selected' if @products.moisturizer == 'BB Cream Dark w/Spf 15' %>>BB Cream Dark w/Spf 15</option>
+    <option value="Hydrating"<%= 'selected' if @products.moisturizer == 'Hydrating' %>>Hydrating : Any Skin Type</option>
+    <option value="Brightening"<%= 'selected' if @products.moisturizer == 'Brightening' %>>Brightening : Any Skin Type</option>
+    <option value="Mattefying"<%= 'selected' if @products.moisturizer == 'Mattefying' %>>Mattefying : Any Skin Type</option>
+    <option value="Spf 30"<%= 'selected' if @products.moisturizer == 'Spf 30' %>>Spf 30</option>
+    </select>
+    <br>
+    <p>Choose a Exfoliator: <select name= "exfoliator"></p>
+    <option value="Pumpkin Enzyme"<%= 'selected' if @products.exfoliator == 'Pumpkin Enzyme' %>>Pumpkin Enzyme</option>
+    <option value="Gentle Scrub"<%= 'selected' if @products.exfoliator == 'Gentle Scrub' %>>Gentle Scrub</option>
+    <option value="Volcanic Ash Scrub"<%= 'selected' if @products.exfoliator == 'Volcanic Ash Scrub' %>>Volcanic Ash Scrub</option>
+    </select>
+    <br>
+    <p>Choose a Mask: <select name= "mask"></p>
+    <option value="HydroJelly"<%= 'selected' if @products.mask == 'HydroJelly' %>>HydroJelly</option>
+    <option value="Plumping Collagen"<%= 'selected' if @products.mask == 'Plumping Collagen' %>>Plumping Collagen</option>
+    <option value="Brightening"<%= 'selected' if @products.mask == 'Brightening' %>>Brightening</option>
+    <option value="Refreshing Eye"<%= 'selected' if @products.mask == 'Refreshing Eye' %>>Refreshing Eye</option>
+    <option value="Collagen Eye"<%= 'selected' if @products.mask == 'Collagen Eye' %>>Collagen Eye</option>
+    <option value="Clay"<%= 'selected' if @products.mask == 'Clay' %>>Kaolin Clay</option>
+    </select>
+    <br>
+    <input type="submit" name="" value="Submit">
+</form>
