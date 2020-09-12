@@ -1,11 +1,18 @@
 <h1>View details about your Product Regiment and edit or delete.</h1>
 <form method="get" action="/products/<%=@products.id%>/edit">
-<a href= "/products/<%= @product.id%>/edit">Edit</a>
-    <button type="submit">Edit</button>
+  <a href= "/products/<%= @products.id%>/edit">Edit</a>
 </form>
-<h1><%= @products.cleanser %></h1>
+
+<form method="post" action="/products/<%= @products.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
+
+
+<h1><%= @products.package_name %></h1>
+<p><%= @products.cleanser %></p>
 <p><%= @products.toner %></p>
-<p><%= @products.serums %></p>
+<p><%= @products.serum %></p>
 <p><%= @products.moisturizer %></p>
 <p><%= @products.exfoliator %></p>
 <p><%= @products.mask %></p>
