@@ -1,4 +1,4 @@
-<h1>Edit form goes here.</h1>
+<h1>Edit your skin regiment here.</h1>
 <form class="" action="/products/<%=@products.id%>" method="post">
 <input type= "hidden" name="_method" value="patch">
 <label for="name">Products:</label>
@@ -57,5 +57,5 @@
     <option value="Clay"<%= 'selected' if @products.mask == 'Clay' %>>Kaolin Clay</option>
     </select>
     <br>
-    <input type="submit" name="" value="Submit">
+    <input type="submit" name="" value="Update">
 </form>
