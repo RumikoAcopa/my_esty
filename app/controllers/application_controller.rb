@@ -1,12 +1,11 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-
-  configure do #sinatra looks here when I render files
+  configure do 
     set :public_folder, 'public'
     set :views, 'app/views'
     set :sessions, true
-    set :session_secret, ENV["SESSION_SECRET"] #xtra layer of security, session id created for particular session
+    set :session_secret, ENV["SESSION_SECRET"] 
     set :method_override, true
     register Sinatra::Flash
   end
@@ -23,12 +22,12 @@ class ApplicationController < Sinatra::Base
   private
   helpers do
 
-    def logged_in? #true if user is logged in, otherwise false
-      !!current_user #dbl bang obj of truthiness. 
+    def logged_in? 
+      !!current_user  
     end
   
     def current_user 
-      @current_user ||= User.find_by(id: session[:user_id])#current user returns
-    end   #reduce the # of db calls assigining it to an instance variable
-  end   #have we added a users id key to the hash
+      @current_user ||= User.find_by(id: session[:user_id])
+    end   
+  end   
 end    

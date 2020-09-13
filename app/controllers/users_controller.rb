@@ -12,15 +12,12 @@ class UsersController < ApplicationController
   end
 
   # POST: /users
-  post "/users/new" do #here is where we will create a new user
+  post "/users/new" do 
     @user = User.create(params)
       if @user.save
-      session[:user_id] = @user.id  #logs the user in once they sign up 
-                              #then log them in, if not show them the form again
-                              #and persist the new user to db
-      redirect "/users/#{@user.id}" #params will look like this: "name"=>"Rumiko"
+      session[:user_id] = @user.id  
+      redirect "/users/#{@user.id}" 
       else
-        #it would be nice to include a message telling them what is wrong
       redirect '/users/new'
     end
   end
@@ -31,21 +28,11 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    #@user = User.new(name: params[:name], email: params[:email], password: params[:password])
-    #if @user.save
-    #session[:user_id] = @user.id
-    # redirect "/sessions/login"
-    #else
-    #  @error = "Think Again!"
-    #  erb :'/users/new
-    #end
   end
 
   # GET: /users/5
-  get '/users/:id' do #this will be the users show route
-    #first create variable
+  get '/users/:id' do 
     @user = User.find_by(id: params[:id])
-      #whats the act of logging someone in w/bcrypt
     erb :'users/show.html'
   end
 

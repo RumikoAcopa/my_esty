@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  #get product/new to create new product entry
   # GET: /products
   get "/products" do
     erb :"/products/index.html"
@@ -17,37 +16,21 @@ class ProductsController < ApplicationController
     current_user.products << @product
     redirect '/products'
   end
-    #if !logged_in?
-    #  redirect '/'
-    #end
-    #if choose_a_cleanser = params[:choose_a_cleanser] && 
-    #  choose_a_toner = params[:choose_a_toner] && 
-    #  choose_a_serum = params[:choose_a_serum] &&
-    #  choose_a_moisturizer = params[:choose_a_moisturizer] && 
-    #  choose_a_exfoliator = params[:choose_a_exfoliator] && 
-    #  choose_a_mask = params[:choose_a_mask] = ""       
-    #  @products = Products.create(choose_a_cleanser, choose_a_toner, choose_a_serum, choose_a_moisturizer, #choose_a_exfoliator, choose_a_mask)
-    #  #user_id: current_user.id
-    #  redirect "/products/#{@products.id}"
-    #else
-    #end 
-    
-  
 
-  # GET: /products/5 #dynamic route key/val pr in params hash
+  # GET: /products/5 
   get "/products/:id" do  
     set_products
     erb :"/products/show.html"
   end
 
-  # GET: /products/5/edit #this route should render edit.erb Product/edit.erb for Edit Form
+  # GET: /products/5/edit 
   get "/products/:id/edit" do
-    set_products#find product based on id 
-    erb :"/products/edit.html" #a file 
+    set_products 
+    erb :"/products/edit.html"  
   end
 
-  # PATCH: /products/5 #job of this action inside this block is find the product list created, 
-  patch "/products/:id" do #modify/update the Product List, then ReDirect to Show Pg
+  # PATCH: /products/5  
+  patch "/products/:id" do 
     set_products
     @products.update(cleanser: params[:cleanser],toner: params[:toner], serum: params[:serum], moisturizer: params[:moisturizer], exfoliator: params[:exfoliator], mask: params[:mask])
     redirect "/products"
