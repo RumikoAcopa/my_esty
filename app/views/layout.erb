@@ -39,7 +39,7 @@
       <% end %>
     </div>
     <div>
-      
+      <%= flash[:error] if flash[:error]%>
       <%= yield %>
 
       <footer class="branding">

@@ -1,19 +1,19 @@
 <h1>View details about your Product Regiment and edit or delete.</h1>
-<form method="get" action="/products/<%=@products.id%>/edit">
-  <a href= "/products/<%= @products.id%>/edit">Edit</a>
+<form method="get" action="/products/<%=@product.id%>/edit">
+  <a href= "/products/<%= @product.id%>/edit">Edit</a>
 </form>
 
-<form method="post" action="/products/<%= @products.id %>">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
+<form method="post" action="/products/<%= @product.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE"> 
   <input type="submit" value="delete">
 </form>
 
 
-<h1><%= @products.package_name %></h1>
-<p><%= @products.cleanser %></p>
-<p><%= @products.toner %></p>
-<p><%= @products.serum %></p>
-<p><%= @products.moisturizer %></p>
-<p><%= @products.exfoliator %></p>
-<p><%= @products.mask %></p>
+<h1><%= @product.package_name %></h1>
+<p><%= @product.cleanser %></p>
+<p><%= @product.toner %></p>
+<p><%= @product.serum %></p>
+<p><%= @product.moisturizer %></p>
+<p><%= @product.exfoliator %></p>
+<p><%= @product.mask %></p>
 <div style="background-image: url('https://images.pexels.com/photos/1331734/pexels-photo-1331734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');">

@@ -5,20 +5,21 @@ class UsersController < ApplicationController
     erb :"users/index.html"
   end
 
-  # GET: /users/new
+  # GET: /users/new ##renders the new user form to sign up / sends the data to post
   get "/users/new" do
     
     erb :"users/new.html"
   end
 
-  # POST: /users
-  post "/users/new" do 
-    @user = User.create(params)
-      if @user.save
+  # POST: /users  ##checks to make sure the user entered all the required params before creating a new user, 
+  post "/users/new" do #if the user signs up, checks to make sure user entered all required params redirects
+    @user = User.create(params)   #to users homepage, 
+    if @user.save
       session[:user_id] = @user.id  
       redirect "/users/#{@user.id}" 
-      else
-      redirect '/users/new'
+    else                            #if param missing redirects to signup pg again
+      @error = "Uh-Oh, Missing Field/Username may be taken.  Try Again"
+      erb :'/users/new.html' #renders the users new page
     end
   end
 
