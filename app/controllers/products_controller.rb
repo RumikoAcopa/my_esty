@@ -26,8 +26,13 @@ class ProductsController < ApplicationController
   # GET: /products/5  #initiates a products variable which then finds a drink based on the params :id  
   get "/products/:id" do    #and renders the products show page which shows the details of the drink
     set_product
-    redirect_if_not_authorized
-    erb :"/products/show.html"
+    #redirect_if_not_authorized
+    if set_product 
+      erb :"/products/show.html"
+    else
+      flash[:error] = "Oooops, you did it again!"
+      redirect to "/products"
+    end
   end
 
   # GET: /products/5/edit #http verb that renders the edit form of a users product that was pulled by the params id

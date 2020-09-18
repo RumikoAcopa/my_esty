@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base #give other controllers access to Si
   
     def current_user #helper method to determine if the user has an active session 
       @current_user ||= User.find_by(id: session[:user_id]) #checks to see if variable on L has a value if not sets variable to whats on the R.
-    end   
+    end  
+    
+    def allowed_to_edit?(product) 
+      product.user == current_user
+    end
   end   
 end    

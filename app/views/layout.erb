@@ -23,18 +23,18 @@
           </button>
 
       <% if !logged_in? %>
-      <a href="/login">Log In</a>
+      <a href="/login">Log In</a>&emsp;&emsp;
       <a href="/users/new">Sign Up</a>
       <% else %>
       <form method="post" action="/logout">
         <input type="hidden" name="_method" value="delete" />
-        <input type="submit" value="Log Out" />
+        <input type="submit" value="Log Out" />&emsp;
       </form>
       <br>
       <form>
-      <input type="button" value="Back" onclick="history.back()">
+      <input type="button" value="Back" onclick="history.back()">&emsp;
       </form>
-      <%= type= "<a href = \"/products/new\"> Choose My Product</a>" if request.path_info != "/products/new" %>
+      <%= type= "<a href = \"/products/new\"> Choose My Product</a>" if request.path_info != "/products/new" %>&emsp;
       <%= type= "<a href = \"/products\"> View My Packages</a>" if request.path_info != "/products" %>
       <% end %>
     </div>

@@ -33,8 +33,12 @@ class UsersController < ApplicationController
 
   # GET: /users/5
   get '/users/:id' do 
-    @user = User.find_by(id: params[:id])
-    erb :'users/show.html'
+    if @user = User.find_by(id: params[:id])
+      erb :'users/show.html'
+    else 
+      flash[:error] = "Ooops.."
+      redirect to "/users/#{current_user.id}"
+    end
   end
 
   # GET: /users/5/edit
