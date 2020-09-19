@@ -1,0 +1,3 @@
+<% Product.all.each do |product|%> 
+<a href ="/products/<%= product.id %>"><%= product.package_name%> created by <%= product.user.name%></a><br>
+<%end%>
